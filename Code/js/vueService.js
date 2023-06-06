@@ -1,12 +1,11 @@
 /*
- * Couche de services HTTP (worker). 
- *
- * @author Jean-Claude Stritt / modif P-A Mettraux
- */
+  But : vueService
+  Auteur : Yaël Meyer
+  Date :   06.06.2023/ V1.0
+*/
 class VueService {
-  constructor() {}
-
-    chargerVue(vue, callback) {
+  constructor() { }
+  chargerVue(vue, callback) {
 
     // charger la vue demandee
     $("#view").load("views/" + vue + ".html", function () {

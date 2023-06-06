@@ -1,71 +1,41 @@
 /*
-  But :     
-  Auteur : prénom + nom
-  Date :   jj.mm.aaaa / V1.0
+  But : css de tout le projet     
+  Auteur : Yaël Meyer
+  Date :   06.06.2023 / V1.0
 */
 body {
-  background-color: grey;
-}
-
-#container {
-  background-color: white;
-  width: 90%;
-  padding: 1em;
-  border: 1px solid black;
-  margin: auto;
+  background-color: lightgrey;
   font-family: Verdana, Arial, serif;
 }
 
-/* pour aligner les champs du formulaire */
-.user-form {
-  /*  padding: 0em;*/
+h1 {
+  text-align: center;
+  margin-bottom: 2em;
 }
 
-.user-form .field {
-  padding: 0.5em;
-  background: #eeeeee;
+footer {
+  text-align: center;
+  font-weight: bold;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  margin-bottom: 1em;
+}
+img {
+  width: 25%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-.user-form .field label {
-  display: inline-block;
-  width: 10em;
+p {
+  margin-left: 30em;
+  margin-right: 30em;
+  text-align: center;
 }
 
-.user-form .field input,radio {
-  display: inline-block;
-}
-
-#langue {
-  display: inline-block;
-}
-
-
-.but-valider {
-    font-size: 1em;
-    width: 7em;
-    border-radius: 1em;
-    background-color: greenyellow;
-    margin-top: 15px;
-}
-
-.but-invalider {
-  font-size: 1em;
-  width: 7em;
-  border-radius: 1em;
-  background-color: red;
-  margin-top: 15px;
-  color: white;
-}
-
-/* .user-form input[type=button] {
-  font-size: 1em;
-  width: 7em;
-  border-radius: 1em;
-  background-color: greenyellow;
-  margin-top: 15px;
-} */
-
-#creer {
-  text-decoration: none;
-  padding-left: 252px;
+img.menu {
+  width: 5%;
+  margin-left: 1em;
 }
