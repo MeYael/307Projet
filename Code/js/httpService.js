@@ -1,10 +1,10 @@
 /*
- * Couche de services HTTP (worker). 
- *
- * @author Jean-Claude Stritt / modif P-A Mettraux
- */
+  But : httpService du projet Fitness   
+  Auteur : Yaël Meyer
+  Date :   17.06.2023/ V1.0
+*/
 class HttpService {
-  constructor() {}
+  constructor() { }
 
   /*
   **  $.ajaxSetup permet de définir une fois un élément sans le refaire par la suite. Ici cela se fait l'error
@@ -33,21 +33,92 @@ class HttpService {
     });
   }
 
-  /*
-  */
-  login(identifiant, successCallback) {
-	// Uploade votre propre fichier PHP et adaptez l'URL ci-dessous.
-    let url = "https://meyery.emf-informatique.ch/Exercices/Exercice_20/php/login20.php";
-    let param = "username=" + identifiant.username + 
-      "&password="+identifiant.password + "&domaine=" + identifiant.domaine + 
-      "&mail="+identifiant.mail+ "&langue="+ identifiant.langue;
+  rechercheFiltreListe() {
+    let type = $("#filtreType").val();
+    let muscle = $("#filtreMuscle").val();
+    let difficulty = $("#filtreDifficulty").val();
+    var settings = {
+      "url": "https://exercises-by-api-ninjas.p.rapidapi.com/v1/exercises?type=" + type + "&muscle=" + muscle + "&difficulty=" + difficulty,
+      "method": "GET",
+      "timeout": 0,
+      "headers": {
+        "X-RapidAPI-Key": "7d63c19110mshc301819ad761fb4p172cb6jsn0f8b6be8bb2c",
+        "X-RapidAPI-Host": "exercises-by-api-ninjas.p.rapidapi.com"
+      },
+    };
 
-    // envoi de la requête
-    $.ajax(url, {
-      type: "POST",
-      data: param,
-      contentType: "application/x-www-form-urlencoded; charset=UTF-8",
-      success: successCallback
+    $.ajax(settings).done(function (response) {
+      $("#resultats").empty();
+
+      // Parcourir les données de la réponse de l'API
+      $.each(response, function (index, exercice) {
+        // Créer une cellule pour chaque exercice
+        var cellule = $('<div class="cellule">');
+        cellule.data('exercice-info', exercice);
+        cellule.text(exercice.name);
+
+        // Ajouter la cellule au conteneur
+        $("#resultats").append(cellule);
+      });
     });
   }
+
+  rechercheFiltreNom() {
+    let nom = $('#recherche').val();
+    var settings = {
+      "url": "https://exercises-by-api-ninjas.p.rapidapi.com/v1/exercises?name=" + nom,
+      "method": "GET",
+      "timeout": 0,
+      "headers": {
+        "X-RapidAPI-Key": "7d63c19110mshc301819ad761fb4p172cb6jsn0f8b6be8bb2c",
+        "X-RapidAPI-Host": "exercises-by-api-ninjas.p.rapidapi.com"
+      },
+    };
+
+    $.ajax(settings).done(function (response) {
+      $("#resultats").empty();
+
+      // Parcourir les données de la réponse de l'API
+      $.each(response, function (index, exercice) {
+        // Créer une cellule pour chaque exercice
+        var cellule = $('<div class="cellule">');
+        cellule.data('exercice-info', exercice);
+        cellule.text(exercice.name);
+
+        // Ajouter la cellule au conteneur
+        $("#resultats").append(cellule);
+      });
+    });
+  }
+
+  rechercheFiltreCalories() {
+    let activity = $("#rechercheNom").val();
+    let weight = $("#rechercheWeight").val();
+    let duration = $("#rechercheDuration").val();
+    var settings = {
+      "url": "https://calories-burned-by-api-ninjas.p.rapidapi.com/v1/caloriesburned?activity=" + activity + "&weight=" + weight + "&duration=" + duration,
+      "method": "GET",
+      "timeout": 0,
+      "headers": {
+        "X-RapidAPI-Key": "7d63c19110mshc301819ad761fb4p172cb6jsn0f8b6be8bb2c",
+        "X-RapidAPI-Host": "calories-burned-by-api-ninjas.p.rapidapi.com"
+      },
+    };
+
+    $.ajax(settings).done(function (response) {
+      $("#resultatsCalories").empty();
+
+      // Parcourir les données de la réponse de l'API
+      $.each(response, function (index, exercice) {
+        // Créer une cellule pour chaque exercice
+        var cellule = $('<div class="cellule">');
+        cellule.data('exercice-info', exercice);
+        cellule.text(exercice.name + " / calories : " + exercice.total_calories);
+
+        // Ajouter la cellule au conteneur
+        $("#resultatsCalories").append(cellule);
+      });
+    });
+  }
+
 }

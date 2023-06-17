@@ -4,7 +4,7 @@
   Date :   06.06.2023 / V1.0
 */
 body {
-  background-color: lightgrey;
+  background-color: lightskyblue;
   font-family: Verdana, Arial, serif;
 }
 
@@ -22,6 +22,7 @@ footer {
   width: 100%;
   margin-bottom: 1em;
 }
+
 img {
   width: 25%;
   display: block;
@@ -30,12 +31,120 @@ img {
 }
 
 p {
-  margin-left: 30em;
-  margin-right: 30em;
+  margin-left: 20%;
+  margin-right: 20%;
   text-align: center;
 }
 
 img.menu {
   width: 5%;
   margin-left: 1em;
+}
+
+#enteteAccueil {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#enteteAccueil .menu {
+  order: -1;
+}
+
+#enteteAccueil h1 {
+  text-align: center;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+#enteteAccueil ul {
+  display: none;
+  position: absolute;
+  left: 0;
+  margin-top: 6em;
+}
+
+#enteteAccueil ul li {
+  list-style: none;
+}
+
+ul li:hover {
+  color: white;
+}
+
+#bodyAccueil {
+  position: fixed;
+}
+
+ul li {
+  font-weight: bold;
+  font-size: 18px;
+}
+
+label {
+  margin-left: 5em;
+}
+
+#filtres {
+  margin-top: 2em;
+  margin-left: 10%;
+  display: flex;
+  margin-bottom: 3em;
+}
+
+.cellule {
+  width: 620px;
+  height: 100px;
+  background-color: white;
+  margin: 5px;
+  display: inline-block;
+  text-align: center;
+  line-height: 100px;
+  color: black;
+  border-radius: 10px;
+}
+
+#titreInfoNom {
+  text-align: center;
+  font-size: 30px;
+  font-weight: bold;
+}
+
+#typeInfo,
+#muscleInfo,
+#equipmentInfo,
+#difficultyInfo {
+  margin-left: 10%;
+  margin-right: 10%;
+  font-size: 16px;
+  font-weight: bold;
+  padding: 1.5em;
+  display: flex;
+}
+
+#imgLogo {
+  margin-left: 40%;
+  margin-right: 60%;
+}
+
+#pasBold {
+  font-weight: normal;
+}
+
+#labelInstructions {
+  margin-left: 10%;
+  padding: 1.5em;
+  text-align: left;
+  font-weight: bold;
+}
+
+#instructionsInfo {
+  margin-left: 17%;
+  margin-right: 17%;
+  text-align: justify;
+}
+
+#infosExercices {
+  margin-top: 5em;
 }

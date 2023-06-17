@@ -1,7 +1,7 @@
 /*
-  But : vueService
+  But : vueService du projet Fitness
   Auteur : Yaël Meyer
-  Date :   06.06.2023/ V1.0
+  Date :   17.06.2023/ V1.0
 */
 class VueService {
   constructor() { }

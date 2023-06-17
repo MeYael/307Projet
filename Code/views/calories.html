@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<!-- 
+   But : HTML calories du projet Fitness
+   Auteur : Yaël Meyer
+   Date :   17.06.2023 / V1.0 
+   -->
+
+<!-- Menu -->
+<header>
+  <div id="enteteAccueil">
+    <img src="./images/menu.png" class="menu">
+    <ul style="display:none;">
+      <li><a id="accueil">Accueil</a></li>
+      <li><a id="exercices">Exercices</a></li>
+      <li><a id="calories">Calories</a></li>
+    </ul>
+    <h1>Calories</h1>
+  </div>
+</header>
+
+<!-- Page d'activités -->
+<div id="filtres">
+
+  <form id="filtreNom">
+    <label for="rechercheNom">Nom : </label>
+    <input type="text" id="rechercheNom" name="rechercheNom" value="run">
+  </form>
+
+  <form id="filtreWeight">
+    <label for="rechercheWeight">Weight (lbs) : </label>
+    <input type="text" id="rechercheWeight" name="rechercheWeight">
+  </form>
+
+  <form id="filtreDuration">
+    <label for="rechercheDuration">Duration (min) : </label>
+    <input type="text" id="rechercheDuration" name="rechercheDuration">
+    <button type="submit">Rechercher</button>
+  </form>
+</div>
+
+<div id="resultatsCalories"></div>
+
+<footer>Merci de renseigner un nom d'activité, 160lbs et 1h de base, possible de changer</footer>

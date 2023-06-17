@@ -1,7 +1,7 @@
 /*
-  But : indexCtrl du projet    
+  But : indexCtrl du projet Fitness    
   Auteur : Yaël Meyer
-  Date :   06.06.2023 / V1.0
+  Date :   17.06.2023 / V1.0
 */
 
 $().ready(function () {
@@ -24,5 +24,20 @@ class IndexCtrl {
   // Charge la page d'accueil
   loadAccueil() {
     this.vue.chargerVue("accueil", () => new AccueilCtrl());
+  }
+
+  loadExercices() {
+    this.vue.chargerVue("exercices", () => new ExercicesCtrl());
+  }
+
+  loadCalories() {
+    this.vue.chargerVue("calories", () => new CaloriesCtrl());
+  }
+
+  loadInfosExercices(infosExercices) {
+    
+    this.vue.chargerVue("infosExercices", () => {
+      new InfosExercicesCtrl(infosExercices);     
+    });
   }
 }

@@ -1,12 +1,12 @@
 /*
-  But : accueilCtrl du projet Fitness    
+  But : caloriesCtrl du projet Fitness  
   Auteur : Yaël Meyer
   Date :   17.06.2023/ V1.0
 */
-class AccueilCtrl {
+class CaloriesCtrl {
   constructor() {
-    this.afficherDate();
     this.afficherMenu();
+    this.afficherFiltreCalories();
 
     $("#accueil").click(() => {
       this.redirigerAccueil();
@@ -20,6 +20,10 @@ class AccueilCtrl {
       this.redirigerCalories();
     })
 
+    $("#filtreDuration").on("submit", (event) => {
+      event.preventDefault();
+      this.afficherFiltreCalories();
+    });
   }
 
   afficherMenu() {
@@ -42,33 +46,19 @@ class AccueilCtrl {
 
   }
 
-  //affiche la date
-  afficherDate() {
-    this.updateDate();
-  }
-
-  // Fonction pour formater la date
-  formatDate(date) {
-    const options = { day: 'numeric', month: 'numeric', year: 'numeric', hour: 'numeric', minute: 'numeric', second: 'numeric' };
-    return date.toLocaleDateString(undefined, options);
-  }
-
-  // Mettre à jour la date actuelle dans le footer
-  updateDate() {
-    const currentDate = new Date();
-    document.getElementById("footer").innerHTML = this.formatDate(currentDate);
-  }
-
-  redirigerAccueil(){
+  redirigerAccueil() {
     indexCtrl.loadAccueil();
   }
 
-  redirigerExercices(){
+  redirigerExercices() {
     indexCtrl.loadExercices();
   }
 
-  redirigerCalories(){
+  redirigerCalories() {
     indexCtrl.loadCalories();
   }
 
+  afficherFiltreCalories() {
+    http.rechercheFiltreCalories();
+  }
 }

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<!-- 
+   But : HTML exercices du projet Fitness
+   Auteur : Yaël Meyer
+   Date :   17.06.2023 / V1.0 
+   -->
+
+<!-- Menu -->
+<header>
+  <div id="enteteAccueil">
+    <img src="./images/menu.png" class="menu">
+    <ul style="display:none;">
+      <li><a id="accueil">Accueil</a></li>
+      <li><a id="exercices">Exercices</a></li>
+      <li><a id="calories">Calories</a></li>
+    </ul>
+    <h1>Exercices</h1>
+  </div>
+</header>
+
+<!-- Page d'exercices -->
+<div id="filtres">
+  <label for="filtreType">Type :&nbsp;</label>
+  <select id="filtreType" name="filtre">
+    <option value=""> </option>
+    <option value="cardio">Cardio</option>
+    <option value="olympic_weightlifting">Olympic Weightlifing</option>
+    <option value="plyometrics">Plyometrics</option>
+    <option value="powerlifting">Powerlifting</option>
+    <option value="strength">Strength</option>
+    <option value="stretching">Stretching</option>
+    <option value="strongman">Strongman</option>
+  </select>
+
+  <label for="filtreMuscle">Muscle :&nbsp;</label>
+  <select id="filtreMuscle" name="filtre">
+    <option value=""> </option>
+    <option value="abdominals">Abdominals</option>
+    <option value="abductors">Abductors</option>
+    <option value="aductors">Adductors</option>
+    <option value="biceps">Biceps</option>
+    <option value="calves">Calves</option>
+    <option value="chest">Chest</option>
+    <option value="forearms">Forearms</option>
+    <option value="glutes">Glutes</option>
+    <option value="hamstrings">Hamstrings</option>
+    <option value="lats">Lats</option>
+    <option value="lower_back">Lower Back</option>
+    <option value="middle_back">Middle back</option>
+    <option value="neck">Neck</option>
+    <option value="quadriceps">Quadriceps</option>
+    <option value="traps">Traps</option>
+    <option value="triceps">Triceps</option>
+  </select>
+
+  <label for="filtreDifficulty">Difficulty :&nbsp;</label>
+  <select id="filtreDifficulty" name="filtre">
+    <option value=""> </option>
+    <option value="beginner">Beginner</option>
+    <option value="intermediate">Intermediate</option>
+    <option value="expert">Expert</option>
+  </select>
+
+  <form id="filtreForm">
+    <label for="recherche">Recherche : </label>
+    <input type="text" id="recherche" name="recherche">
+    <button type="submit">Rechercher</button>
+  </form>
+</div>
+
+<div id="resultats"></div>
+
+<footer>Possible de renseigner le type, muscle ainsi que la difficutlé pour trier ou juste le nom. Le tri se fait automatiquement</footer>
